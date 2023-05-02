@@ -10,7 +10,7 @@
         "assets": [
           {
             "path": "bundle.tar.gz",
-            "label: "OPA Bundle"
+            "label": "OPA Bundle"
           }
         ]
       }
