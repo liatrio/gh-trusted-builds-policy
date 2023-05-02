@@ -1,0 +1,25 @@
+name: bundle
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Test Policies
+        run: opa test .
+      - name: Build OPA Bundle
+        id: build_opa_bundle
+        run: opa build --ignore "*_test.rego" policy
+      - name: Semantic Release
+        id: semantic_release
+        uses: cycjimmy/semantic-release-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release OPA Bundle
+        run: gh release create ${{ steps.semantic_release.outputs.new_release_version }} bundle.tar.gz

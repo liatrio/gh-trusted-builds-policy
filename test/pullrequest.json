@@ -1,0 +1,50 @@
+{
+  "pullrequest": {
+    "two_reviewers": {
+      "Attestation": "{\"_type\":\"https://in-toto.io/Statement/v0.1\",\"predicateType\":\"https://liatr.io/attestations/github-pull-request/v1\",\"subject\":[{\"name\":\"git+https://github.com/liatrio/gh-trusted-builds-app.git\",\"digest\":{\"sha1\":\"21eafbfb102f996dcbac3d0eaf1296af8f4ca844\"}}],\"predicate\":{\"link\":\"https://github.com/liatrio/gh-trusted-builds-app/pull/6\",\"title\":\"feat: health endpoint\",\"author\":\"rcoy-v\",\"mergedBy\":\"rcoy-v\",\"createdAt\":\"2023-05-02T14:49:31Z\",\"mergedAt\":\"2023-05-02T14:58:25Z\",\"base\":\"main\",\"head\":\"healthz\",\"approved\":true,\"reviewers\":[{\"name\":\"alexashley\",\"approved\":true,\"reviewLink\":\"https://github.com/liatrio/gh-trusted-builds-app/pull/6#pullrequestreview-1409291355\",\"timestamp\":\"2023-05-02T14:54:56Z\"},{\"name\":\"blairdrummond\",\"approved\":true,\"reviewLink\":\"https://github.com/liatrio/gh-trusted-builds-app/pull/6#pullrequestreview-1409289041\",\"timestamp\":\"2023-05-02T14:53:50Z\"}],\"contributors\":[{\"name\":\"rcoy-v\"}],\"predicateCreatedAt\":\"2023-05-02T14:59:03.710242382Z\"}}",
+      "AttestationType": "",
+      "Body": {
+        "IntotoObj": {
+          "content": {
+            "hash": {
+              "algorithm": "sha256",
+              "value": "2b247da429d7073de2984fa1ebd1be5f1e5ab397d879623ce7d1d4a517ed9873"
+            },
+            "payloadHash": {
+              "algorithm": "sha256",
+              "value": "3dcf7a9498bca8ed2bdf8eb7375aa12e86116b03528bcad60ff219b4ae0e57d3"
+            }
+          },
+          "publicKey": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFaUpmamtBY1FBZDJ1L1ZDeUpiOXF4bVV4d0pDYgoyZlBZZ1JrekdKbEYySUdHbnUrRWJycEo3SU1jaXN2cXYxOUE1cFVUazZCRXAxWnl0VzRVMmYxL3FBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="
+        }
+      },
+      "LogIndex": 5,
+      "IntegratedTime": 1683039544,
+      "UUID": "426935e4def3c60029977a4a46c2a6ae853997891927c147f27e14ce5e1a60cae37edd57cfd798d4",
+      "LogID": "aa734d09eae60ff0e521e84664a110b60d376f8a02385ab6e41453a0083a3d8b"
+    },
+    "no_reviewer": {
+      "Attestation": "{\"_type\":\"https://in-toto.io/Statement/v0.1\",\"predicateType\":\"https://liatr.io/attestations/github-pull-request/v1\",\"subject\":[{\"name\":\"git+https://github.com/liatrio/gh-trusted-builds-app.git\",\"digest\":{\"sha1\":\"cf1d0a24941a7a787c15fbb4183e345d819651a3\"}}],\"predicate\":{\"link\":\"https://github.com/liatrio/gh-trusted-builds-app/pull/7\",\"title\":\"docs: fix spelling error in readme\",\"author\":\"rcoy-v\",\"mergedBy\":\"rcoy-v\",\"createdAt\":\"2023-05-02T15:05:39Z\",\"mergedAt\":\"2023-05-02T15:05:47Z\",\"base\":\"main\",\"head\":\"spelling-fix\",\"approved\":false,\"reviewers\":[],\"contributors\":[{\"name\":\"rcoy-v\"}],\"predicateCreatedAt\":\"2023-05-02T15:06:41.768710296Z\"}}",
+      "AttestationType": "",
+      "Body": {
+        "IntotoObj": {
+          "content": {
+            "hash": {
+              "algorithm": "sha256",
+              "value": "d1fe2ef4ca599837254a197ef5c81e0b6ec9f89ff85dc99e1ea5393ffe05fd1e"
+            },
+            "payloadHash": {
+              "algorithm": "sha256",
+              "value": "70a41f87a1c1f82ad05a76854446feb6c244844df3da9abac2c8b3e70dc3ba9a"
+            }
+          },
+          "publicKey": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFaUpmamtBY1FBZDJ1L1ZDeUpiOXF4bVV4d0pDYgoyZlBZZ1JrekdKbEYySUdHbnUrRWJycEo3SU1jaXN2cXYxOUE1cFVUazZCRXAxWnl0VzRVMmYxL3FBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="
+        }
+      },
+      "LogIndex": 10,
+      "IntegratedTime": 1683040002,
+      "UUID": "426935e4def3c6001f4765e92e8f84b9353107f36e21bdaad5e1e6e283d103f967309d531cb933c7",
+      "LogID": "aa734d09eae60ff0e521e84664a110b60d376f8a02385ab6e41453a0083a3d8b"
+    }
+  }
+}

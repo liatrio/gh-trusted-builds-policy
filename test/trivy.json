@@ -1,0 +1,27 @@
+{
+  "trivy": {
+    "noresults": {
+      "Attestation": "{\"_type\":\"https://in-toto.io/Statement/v0.1\",\"predicateType\":\"https://cosign.sigstore.dev/attestation/vuln/v1\",\"subject\":[{\"name\":\"agplatformrnim.azurecr.io/liatrio/gh-trusted-builds-app\",\"digest\":{\"sha256\":\"402f75059e50ca02f0b299fff18827a2d421806a1d4468319a7a3a4d73869c6f\"}}],\"predicate\":{\"invocation\":{\"parameters\":null,\"uri\":\"\",\"event_id\":\"\",\"builder.id\":\"\"},\"scanner\":{\"uri\":\"pkg:github/aquasecurity/trivy@0.38.1\",\"version\":\"0.38.1\",\"db\":{\"uri\":\"\",\"version\":\"\"},\"result\":{\"ArtifactName\":\"agplatformrnim.azurecr.io/liatrio/gh-trusted-builds-app@sha256:402f75059e50ca02f0b299fff18827a2d421806a1d4468319a7a3a4d73869c6f\",\"ArtifactType\":\"container_image\",\"Metadata\":{\"DiffIDs\":[\"sha256:494b53b7397ee2e8ff729e660f1ba82a419ba68ddb1555e0bcfd731bc98ec4d4\",\"sha256:c0930de9a53b20873ff6411f282b2144c94c61e5e1c1cd0fc5ae254064792191\"],\"ImageConfig\":{\"architecture\":\"amd64\",\"config\":{\"Entrypoint\":[\"/app/server\"],\"Env\":[\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"],\"Labels\":{\"org.opencontainers.image.created\":\"2023-05-02T14:58:55.293Z\",\"org.opencontainers.image.description\":\"\",\"org.opencontainers.image.licenses\":\"\",\"org.opencontainers.image.revision\":\"21eafbfb102f996dcbac3d0eaf1296af8f4ca844\",\"org.opencontainers.image.source\":\"https://github.com/liatrio/gh-trusted-builds-app\",\"org.opencontainers.image.title\":\"gh-trusted-builds-app\",\"org.opencontainers.image.url\":\"https://github.com/liatrio/gh-trusted-builds-app\",\"org.opencontainers.image.version\":\"main\"},\"WorkingDir\":\"/app\"},\"created\":\"2023-05-02T14:59:17.367150942Z\",\"history\":[{\"comment\":\"buildkit.dockerfile.v0\",\"created\":\"2023-05-02T14:58:57Z\",\"created_by\":\"WORKDIR /app\"},{\"comment\":\"buildkit.dockerfile.v0\",\"created\":\"2023-05-02T14:59:17Z\",\"created_by\":\"COPY /app/server . # buildkit\"},{\"comment\":\"buildkit.dockerfile.v0\",\"created\":\"2023-05-02T14:59:17Z\",\"created_by\":\"ENTRYPOINT [\\\"/app/server\\\"]\",\"empty_layer\":true}],\"os\":\"linux\",\"rootfs\":{\"diff_ids\":[\"sha256:494b53b7397ee2e8ff729e660f1ba82a419ba68ddb1555e0bcfd731bc98ec4d4\",\"sha256:c0930de9a53b20873ff6411f282b2144c94c61e5e1c1cd0fc5ae254064792191\"],\"type\":\"layers\"}},\"ImageID\":\"sha256:7570a5ce737f0aa022fa5fe55231c466b05a4c8ece38f054892fa3cf8ee034e8\",\"RepoDigests\":[\"agplatformrnim.azurecr.io/liatrio/gh-trusted-builds-app@sha256:402f75059e50ca02f0b299fff18827a2d421806a1d4468319a7a3a4d73869c6f\"]},\"SchemaVersion\":2}},\"metadata\":{\"scanStartedOn\":\"2023-05-02T15:02:05.836645608Z\",\"scanFinishedOn\":\"2023-05-02T15:02:05.836645608Z\"}}}",
+      "AttestationType": "",
+      "Body": {
+        "IntotoObj": {
+          "content": {
+            "hash": {
+              "algorithm": "sha256",
+              "value": "d1b5f671aaad435609efd2b152a9613b044d4f1a701d9f83cf2747a024932321"
+            },
+            "payloadHash": {
+              "algorithm": "sha256",
+              "value": "a312c77afbc33e5400a4f8db3a4e2b3de190b22b0601a9b70ad131dac85104fc"
+            }
+          },
+          "publicKey": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFQjFDNURoOGxsSzhxSnpNcFMvN3FINUR3dDZGMgp6SDlPNGNrYjVkSTYxQnF3RzZJbENBcmt1bkc0Vi9PcEltQU04TEtXTGtnYjVzV2dPbkFheU5VWlFnPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="
+        }
+      },
+      "LogIndex": 8,
+      "IntegratedTime": 1683039741,
+      "UUID": "426935e4def3c6005d936f3cb85c5b308c66c8f1d834776a484dc93362cac9197edcdef7f0d0b004",
+      "LogID": "aa734d09eae60ff0e521e84664a110b60d376f8a02385ab6e41453a0083a3d8b"
+    }
+  }
+}
