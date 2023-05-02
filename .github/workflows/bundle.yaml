@@ -23,6 +23,9 @@ jobs:
       - name: Semantic Release
         id: semantic_release
         uses: cycjimmy/semantic-release-action@v3
+        with:
+          branches:
+            - main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release OPA Bundle
