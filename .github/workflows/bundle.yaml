@@ -22,3 +22,5 @@ jobs:
         run: opa build --ignore "*_test.rego" policy
       - name: Release OPA Bundle
         run: gh release create ${GITHUB_SHA} bundle.tar.gz
+        env:
+          GH_TOKEN: ${{ github.token }}
