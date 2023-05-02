@@ -1,0 +1,19 @@
+{
+  "branches": "main",
+  "repositoryUrl": "https://github.com/liatrio/gh-trusted-builds-policy",
+  "debug": "false",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "bundle.tar.gz",
+            "label: "OPA Bundle"
+          }
+        ]
+      }
+    ]
+  ]
+}

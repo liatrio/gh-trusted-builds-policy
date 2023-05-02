@@ -15,12 +15,16 @@ jobs:
         uses: open-policy-agent/setup-opa@v2
         with:
           version: 0.52.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Test Policies
         run: opa test .
       - name: Build OPA Bundle
         id: build_opa_bundle
         run: opa build --ignore "*_test.rego" policy
+      - name: Setup Semantic Release
+        run: npm install -g semantic-release @semantic-release/github -D
       - name: Release OPA Bundle
-        run: gh release create ${GITHUB_SHA} bundle.tar.gz
-        env:
-          GH_TOKEN: ${{ github.token }}
+        run: npx semantic-release
