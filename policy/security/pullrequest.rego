@@ -13,6 +13,6 @@ violation[msg] {
 }
 
 violation[msg] {
-	not count(input.predicate.reviewers) >= 1
+	count(input.predicate.reviewers) < 1
 	msg := "pull request reviewers is less than 1"
 }

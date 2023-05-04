@@ -1,16 +1,38 @@
 package governance
-
 import data.security
 
 default allow = false
 
+pullrequest_attestations :=
+    [att | json.unmarshal(input[i].Attestation).predicateType == "https://liatr.io/attestations/github-pull-request/v1"; att := json.unmarshal(input[i].Attestation)]
+
+trivy_attestations :=
+    [att | json.unmarshal(input[i].Attestation).predicateType == "https://cosign.sigstore.dev/attestation/vuln/v1"; att := json.unmarshal(input[i].Attestation)]
+
+
 allow {
-	pullrequest_violations
+	count(pullrequest_violations) == 0
+	count(trivy_violations) == 0
 }
 
-pullrequest_violations {
+pullrequest_violations[msg] {
+    count(pullrequest_attestations) == 0
+    msg := "no pull request attestation"
+}
+
+pullrequest_violations[msg] {
+	not security.pullrequest.allow with input as pullrequest_attestations[0]
+	msg := "pull request violations found"
+}
+
+trivy_violations[msg] {
+    count(trivy_attestations) == 0
+    msg := "no trivy attestation"
+}
+
+trivy_violations[msg] {
 	some i
-	attestation := json.unmarshal(input[i].Attestation)
-	attestation.predicateType == "https://liatr.io/attestations/github-pull-request/v1"
-	security.pullrequest.allow with input as attestation
+	attestation := trivy_attestations[i]
+	not security.trivy.allow with input as attestation
+	msg := "trivy scan violation found"
 }
