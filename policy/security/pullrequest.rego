@@ -3,7 +3,6 @@ package security.pullrequest
 default allow = false
 
 allow {
-	print(violation)
 	count(violation) == 0
 }
 

@@ -11,8 +11,9 @@ trivy_attestations :=
 
 
 allow {
-	count(pullrequest_violations) == 0
-	count(trivy_violations) == 0
+    violations := pullrequest_violations | trivy_violations
+    print(violations)
+    count(violations) == 0
 }
 
 pullrequest_violations[msg] {
