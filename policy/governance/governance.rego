@@ -9,9 +9,12 @@ pullrequest_attestations :=
 trivy_attestations :=
     [att | json.unmarshal(input[i].Attestation).predicateType == "https://cosign.sigstore.dev/attestation/vuln/v1"; att := json.unmarshal(input[i].Attestation)]
 
+sbom_attestations :=
+    [att | json.unmarshal(input[i].Attestation).predicateType == "https://spdx.dev/Document"; att := json.unmarshal(input[i].Attestation)]
+
 
 allow {
-    violations := pullrequest_violations | trivy_violations
+    violations := pullrequest_violations | trivy_violations | sbom_violations
     print(violations)
     count(violations) == 0
 }
@@ -24,6 +27,11 @@ pullrequest_violations[msg] {
 pullrequest_violations[msg] {
 	not security.pullrequest.allow with input as pullrequest_attestations[0]
 	msg := "pull request violations found"
+}
+
+sbom_violations[msg] {
+    count(sbom_attestations) == 0
+    msg:= "no sbom attestation"
 }
 
 trivy_violations[msg] {
