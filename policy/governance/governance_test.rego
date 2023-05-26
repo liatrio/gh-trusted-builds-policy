@@ -3,7 +3,7 @@ package governance_test
 import data.governance.allow
 
 test_all_pass {
-	case := [data.test.pullrequest.two_reviewers, data.test.trivy.no_results]
+	case := [data.test.pullrequest.two_reviewers, data.test.trivy.no_results, data.test.sbom.app]
 	allow with input as case
 }
 
@@ -25,4 +25,9 @@ test_fail_null_reviewer {
 test_fail_medium_vuln {
 	case := [data.test.pullrequest.two_reviewers, data.test.trivy.medium_pkg_result]
 	not allow with input as case
+}
+
+test_fail_no_sbom {
+    case := [data.test.pullrequest.two_reviewers, data.test.trivy.no_results]
+    not allow with input as case
 }
