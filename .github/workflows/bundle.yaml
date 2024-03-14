@@ -4,20 +4,20 @@ on:
   workflow_dispatch:
 
 env:
-  OPA_VERSION: "0.52.0"
+  OPA_VERSION: "0.62.1"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Setup OPA
-        uses: open-policy-agent/setup-opa@v2
+        uses: open-policy-agent/setup-opa@34a30e8a924d1b03ce2cf7abe97250bbb1f332b5 # v2
         with:
           version: ${{ env.OPA_VERSION }}
       - name: Test Policy
-        run: opa test .
+        run: opa test --verbose .
 
   release:
     needs:
@@ -26,19 +26,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Setup OPA
-        uses: open-policy-agent/setup-opa@v2
+        uses: open-policy-agent/setup-opa@34a30e8a924d1b03ce2cf7abe97250bbb1f332b5 # v2
         with:
           version: ${{ env.OPA_VERSION }}
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Test Policies
         run: opa test .
       - name: Build OPA Bundle
-        id: build_opa_bundle
         run: opa build --ignore "*_test.rego" policy
       - name: Setup Semantic Release
         run: npm install -g semantic-release @semantic-release/github -D
