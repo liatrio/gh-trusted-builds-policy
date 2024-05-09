@@ -1,3 +1,7 @@
+# Software provenance Rego policy verifying that 
+# (1) the software artifact has an associated SLSA provenance attestation and 
+# (2) the software artifact was published by Liatrio. 
+
 package security.provenance
 
 default allow = false
